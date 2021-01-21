@@ -1,10 +1,12 @@
 BUILD = docker-compose build
 RUN = docker-compose run
 
+VERSION = $(shell awk -F ' = ' '$$1 ~ /version/ { gsub(/[\"]/, "", $$2); printf("%s",$$2) }' Cargo.toml)
+
 help:
 	@echo "USAGE"
 	@echo
-	@echo "    make <command> VERSION=X.Y.Z"
+	@echo "    make <command>"
 	@echo "    Include 'sudo' when necessary."
 	@echo
 	@echo
@@ -15,7 +17,7 @@ help:
 	@echo "    bash            bash REPL (Read-Eval-Print loop), suitable for debugging"
 	@echo "    rust            access rust through the Evcxr REPL (Read-Eval-Print loop)"
 	@echo "    rust-jupyter    access rust through the Evcxr Jupyter Notebook"
-	@echo "    release         [Requires VERSION] Release a new version of the package in the dev branch."
+	@echo "    release         Release VERSION (specified in Cargo.toml) on the dev branch"
 
 #################
 # User Commands #
@@ -39,4 +41,3 @@ rust-jupyter:
 release:
 	git tag -a $(VERSION) -m "Auto-generated release $(VERSION)"
 	git push origin dev tag $(VERSION)
-
