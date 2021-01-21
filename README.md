@@ -139,7 +139,7 @@ Check out additional examples in the `/notebooks` directory (`.ipynb` files with
 
 You need to include any external dependencies to the `Cargo.toml` file in addition to the default list:
 
-```yaml
+```toml
 [dependencies]
 datafusion = "2.0.0"
 arrow = "2.0.0"
@@ -147,7 +147,7 @@ arrow = "2.0.0"
 
 You may also want to change a few lines in the `Dockerfile` to ensure that the correct version of Rust, consistent with your dependencies, is being used. We keep it fixed in the original Greenhouse template at `nightly-2021-01-01`:
 
-```yaml
+```dockerfile
 RUN rustup install nightly-2021-01-01
 RUN rustup override set nightly-2021-01-01
 RUN rustup run nightly rustc --version
