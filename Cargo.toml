@@ -1,0 +1,29 @@
+[package]
+name = "greenhouse"
+version = "0.1.0"
+authors = ["Felipe Penha <felipe.penha@alumni.usp.br>"]
+description = "A Rust containerized framework for a better Data X development workflow."
+repository = "https://github.com/felipepenha/rust-greenhouse"
+license = "Apache-2.0"
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+]
+edition= "2018"
+
+[workspace]
+members = ["src/*"]
+
+[lib]
+name = "foo"
+path = "src/lib.rs"
+crate-type = ["lib"]
+test = true
+
+[[bin]]
+name = "script"
+path = "src/main.rs"
+
+[dependencies]
+datafusion = "2.0.0"
+arrow = "2.0.0"

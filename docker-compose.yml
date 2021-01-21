@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: base_image
+      
+  bash:
+    image: base_image
+    user: root
+    volumes:
+      - .:/usr/app/
+    working_dir: /usr/app/
+    entrypoint: /bin/sh
+
+  rust:
+    image: base_image
+    user: root
+    volumes:
+      - .:/usr/app/
+    working_dir: /usr/app/
+
+    command: "evcxr"
+
+
+  rust-jupyter:
+    image: base_image
+    user: root
+    volumes:
+      - .:/usr/app/
+    working_dir: /usr/app/
+    command: "jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser"
+    ports:
+      - 8888:8888
