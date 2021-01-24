@@ -1,13 +1,9 @@
-# How to contribute to Greenhouse
+# Contributing
+
+These contributing guidelines were designed both for the original [Greenhouse repo template](https://github.com/felipepenha/rust-greenhouse) and any Rust packages derived from that template.
 
 
-## Bugs, questions, or suggestions
-
-
-In case you found bugs, would like to ask a question, or have suggestions to offer, feel free to use the [Issues Section](https://github.com/felipepenha/rust-greenhouse/issues) in the GitHub repository.
-
-
-## Do you want to develop new features or improve the present code?
+## New Features and/or improvements
 
 
 Clone the repository locally:
@@ -56,3 +52,8 @@ $ make release
 ```
 
 The above command will take care of checking the version in `Cargo.toml` and releasing your code on `dev` with a tag consistent with `Cargo.toml`.
+
+## Bugs, questions, or suggestions
+
+
+In case you found bugs, would like to ask a question, or have suggestions to offer, feel free to use the [Issues Section](https://github.com/felipepenha/rust-greenhouse/issues) in the GitHub repository.

@@ -1,8 +1,10 @@
 ![](/images/Greenhouse_github_card.png)
 
+
 # Greenhouse
 
 A containerized Rust framework for a better Data X development workflow. Where X = Science, Engineering, Analytics, etc.
+
 
 The name "Greenhouse" is a metaphor. A greenhouse is a structure made of glass to grow plants despite of external conditions such as a cold winter. Likewise, the Greenhouse framework builds a standalone container for Rust developmet which is fully transparent to the user.
 
@@ -59,7 +61,9 @@ Use Control-C to stop this server and shut down all kernels (twice to skip confi
         http://(xxxxxxxxxxxx or 127.0.0.1):8888/?token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+
 Next, you simply need to follow the instructions printed out on your own terminal.
+
 
 In the generic example above, I would paste the following on my browser:
 
@@ -67,7 +71,9 @@ In the generic example above, I would paste the following on my browser:
 http://127.0.0.1:8888/?token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+
 Any changes made in the files within the Jupyter interface, for example saved changes in `.rs`, `.ipynb`, and `.py` files, will be reflected in the original files you store locally, and vice-versa. This is ensured by the fact that the whole greenhouse directory is set as a `volume` in the `docker-compose.yml` configuration file.
+
 
 You may also choose to run code using the REPL (Read-Eval-Print loop) in the terminal by running:
 
@@ -98,6 +104,7 @@ In the Jupyter Notebook you will be able to access it through
 >> use messages::hello_world;
 ```
 
+
 Next, to actually use the function:
 
 ```rust
@@ -106,11 +113,11 @@ Next, to actually use the function:
 Hello, world! From `src/message.rs`
 ```
 
+
 Check out additional examples in the `/notebooks` directory (`.ipynb` files with preffix `example_`).
 
 
 # Greenhouse Structure
-
 
 ```bash
 .
@@ -132,11 +139,13 @@ Check out additional examples in the `/notebooks` directory (`.ipynb` files with
 └── target
 ```
 
+
 * `Cargo.toml`: manifest of the package. Dependencies are defined here.
 * `src/`: source directory for your Rust package
 * `src/lib.rs`: defines your package (ex: which crates are included)
 * `src/main.rs`: a script for dev purposes with `$cargo run`
 * `messages.rs`: example of crate that yields a "Hello World" message
+
 
 # Adding External Dependencies
 
@@ -148,6 +157,7 @@ datafusion = "2.0.0"
 arrow = "2.0.0"
 ```
 
+
 You may also want to change a few lines in the `Dockerfile` to ensure that the correct version of Rust, consistent with your dependencies, is being used. We keep it fixed in the original Greenhouse template at `nightly-2021-01-01`:
 
 ```dockerfile
@@ -155,6 +165,7 @@ RUN rustup install nightly-2021-01-01
 RUN rustup override set nightly-2021-01-01
 RUN rustup run nightly rustc --version
 ```
+
 
 `$ make build` will print out on your screen the version that is being used, in your own greenhouse. You may want to double-check it by running:
 
@@ -178,8 +189,13 @@ nightly-2021-01-01-x86_64-unknown-linux-gnu (directory override for '/usr/app')
 rustc 1.51.0-nightly (44e3daf5e 2020-12-31)
 ```
 
+
 The above output means that, in fact, `nightly-2021-01-01` is being used for `/usr/app`.
 
+
+## Continuous Integration
+
+Follow the instructins in [CONTRIBUTING.md](https://github.com/felipepenha/rust-greenhouse/blob/main/CONTRIBUTING.md). Be sure to update `Cargo.toml` before each new release on the `dev` branch.
 
 
 
