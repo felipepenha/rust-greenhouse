@@ -4,7 +4,7 @@
 
 A containerized Rust framework for a better Data X development workflow. Where X = Science, Engineering, Analytics, etc.
 
-The name "Greenhouse" is a metaphor. A greenhouse is a structure made of glass to grow plants despite of external conditions such as a cold winter. Likewise, the Greenhouse framework builds a standalone container which is fully transparent to the user.
+The name "Greenhouse" is a metaphor. A greenhouse is a structure made of glass to grow plants despite of external conditions such as a cold winter. Likewise, the Greenhouse framework builds a standalone container for Rust developmet which is fully transparent to the user.
 
 
 # Quick Start
@@ -12,7 +12,10 @@ The name "Greenhouse" is a metaphor. A greenhouse is a structure made of glass t
 This is a template repository. [Follow this link for instructions to create a repository from a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 
 
-The greenhouse work is initiated with `make` commands.
+First, make sure `make`, `docker` and `docker-compose` are installed in your system.
+
+
+The greenhouse dev workf is performed via `make` commands.
 
 
 To see the most up to date list of available commands run
