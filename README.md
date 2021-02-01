@@ -161,9 +161,10 @@ arrow = "2.0.0"
 You may also want to change a few lines in the `Dockerfile` to ensure that the correct version of Rust, consistent with your dependencies, is being used. We keep it fixed in the original Greenhouse template at `nightly-2021-01-01`:
 
 ```dockerfile
-RUN rustup install nightly-2021-01-01
-RUN rustup override set nightly-2021-01-01
-RUN rustup run nightly rustc --version
+RUN rustup install nightly-2021-01-21
+RUN rustup override set nightly-2021-01-21
+RUN rustup default nightly-2021-01-21
+RUN echo $(rustup show)
 ```
 
 
@@ -171,7 +172,7 @@ RUN rustup run nightly rustc --version
 
 ```bash
 $ make bash
-$ rustup run nightly rustc --version
+$ rustup show
 
 Default host: x86_64-unknown-linux-gnu
 rustup home:  /usr/local/rustup
@@ -179,14 +180,14 @@ rustup home:  /usr/local/rustup
 installed toolchains
 --------------------
 
-nightly-2021-01-01-x86_64-unknown-linux-gnu
-1.49.0-x86_64-unknown-linux-gnu (default)
+nightly-2021-01-21-x86_64-unknown-linux-gnu (default)
+1.49.0-x86_64-unknown-linux-gnu
 
 active toolchain
 ----------------
 
-nightly-2021-01-01-x86_64-unknown-linux-gnu (directory override for '/usr/app')
-rustc 1.51.0-nightly (44e3daf5e 2020-12-31)
+nightly-2021-01-21-x86_64-unknown-linux-gnu (directory override for '/usr/app')
+rustc 1.51.0-nightly (a4cbb44ae 2021-01-20)
 ```
 
 
