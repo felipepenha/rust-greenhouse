@@ -16,7 +16,7 @@ help:
 	@echo "    build-no-cache  build image from scratch, and not from cache"
 	@echo "    bash            bash REPL (Read-Eval-Print loop), suitable for debugging"
 	@echo "    rust            access rust through the Evcxr REPL (Read-Eval-Print loop)"
-	@echo "    rust-jupyter    access rust through the Evcxr Jupyter Notebook"
+	@echo "    jupyter    access rust through the Evcxr Jupyter Notebook"
 	@echo "    release         Release VERSION (specified in Cargo.toml) on the dev branch"
 
 #################
@@ -35,8 +35,8 @@ bash:
 rust:
 	$(RUN) rust
 
-rust-jupyter:
-	$(RUN) --service-ports rust-jupyter
+jupyter:
+	$(RUN) --service-ports jupyter
 	
 release:
 	git tag -a $(VERSION) -m "Auto-generated release $(VERSION)"
