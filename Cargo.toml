@@ -1,6 +1,6 @@
 [package]
 name = "greenhouse"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Felipe Penha <felipe.penha@alumni.usp.br>"]
 description = "A Rust containerized framework for a better Data X development workflow."
 repository = "https://github.com/felipepenha/rust-greenhouse"
