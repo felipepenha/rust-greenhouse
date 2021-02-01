@@ -40,4 +40,4 @@ jupyter:
 	
 release:
 	git tag -a $(VERSION) -m "Auto-generated release $(VERSION)"
-	git push origin dev tag $(VERSION)
+	git push origin HEAD:dev tag $(VERSION)
