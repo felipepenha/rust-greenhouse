@@ -1,7 +1,0 @@
-{
-  "name": "rust-greenhouse",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "base",
-  "workspaceFolder": ".",
-  "shutdownAction": "stopCompose"
-}

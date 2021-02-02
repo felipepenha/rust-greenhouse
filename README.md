@@ -28,18 +28,20 @@ $ make help
 USAGE
 
     make <command>
-    Include 'sudo' when necessary. To avoid using sudo,
-    please follow the steps in
+    Include 'sudo' when necessary.
+    To avoid using sudo, follow the steps in
     https://docs.docker.com/engine/install/linux-postinstall/
 
 
 COMMANDS
 
-    build:           build image using cache
-    build-no-cache:  build image from scratch, and not from cache
-    bash:            bash REPL (Read-Eval-Print loop), suitable for debugging
-    rust:            access rust through the Evcxr REPL (Read-Eval-Print loop)
-    rust-jupyter:    access rust through the Evcxr Jupyter Notebook
+    build           build image using cache
+    build-no-cache  build image from scratch, and not from cache
+    bash            bash REPL (Read-Eval-Print loop), suitable for debugging
+    rust            access rust through the Evcxr REPL (Read-Eval-Print loop)
+    jupyter         access rust through the Evcxr Jupyter Notebook
+    release         Release VERSION (specified in Cargo.toml) on the dev branch
+
 ```
 
 
@@ -196,10 +198,25 @@ rustc 1.51.0-nightly (a4cbb44ae 2021-01-20)
 The above output means that, in fact, `nightly-2021-01-01` is being used for `/usr/app`.
 
 
-## Continuous Integration
+## Continuous Integration / Continuous Delivery (CI/CD)
 
 Follow the instructins in [CONTRIBUTING.md](https://github.com/felipepenha/rust-greenhouse/blob/main/CONTRIBUTING.md). Be sure to update `Cargo.toml` before each new release on the `dev` branch.
 
+## VS Code Integration
+
+In your local machine:
+
+1. [install VS Code](https://code.visualstudio.com/docs/setup/linux),
+
+2. install the [`ms-vscode-remote.remote-containers`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension locally,
+
+3. follow the [instructions in the docker docs](https://docs.docker.com/engine/install/linux-postinstall/) to ensure that $USER has root access to docker.
+
+The next time you open up VS Code in the project directory, VS Code should already be running in the greenhouse container, as specified in the manifest `.devcontainer.json`. 
+
+Notice that VS Code will run intilization commands that may take some time to process.
+
+VS Code will already include the [`rust-lang.rust`](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) and [`matklad.rust-analyzer`](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) extensions, without the need to install it in your own local machine.
 
 
 
