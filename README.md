@@ -17,7 +17,7 @@ This is a template repository. [Follow this link for instructions to create a re
 First, make sure `make`, `docker` and `docker-compose` are installed in your system.
 
 
-The greenhouse dev workf is performed via `make` commands.
+The greenhouse dev work is performed via `make` commands.
 
 
 To see the most up to date list of available commands run
@@ -28,7 +28,9 @@ $ make help
 USAGE
 
     make <command>
-    Include 'sudo' when necessary.
+    Include 'sudo' when necessary. To avoid using sudo,
+    please follow the steps in
+    https://docs.docker.com/engine/install/linux-postinstall/
 
 
 COMMANDS
