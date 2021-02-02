@@ -22,7 +22,6 @@ services:
     volumes:
       - .:/usr/app/
     working_dir: /usr/app/
-
     command: "evcxr"
 
 
