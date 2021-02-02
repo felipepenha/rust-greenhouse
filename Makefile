@@ -8,6 +8,8 @@ help:
 	@echo
 	@echo "    make <command>"
 	@echo "    Include 'sudo' when necessary."
+	@echo "    To avoid using sudo, follow the steps in"
+	@echo "    https://docs.docker.com/engine/install/linux-postinstall/"
 	@echo
 	@echo
 	@echo "COMMANDS"
@@ -16,7 +18,7 @@ help:
 	@echo "    build-no-cache  build image from scratch, and not from cache"
 	@echo "    bash            bash REPL (Read-Eval-Print loop), suitable for debugging"
 	@echo "    rust            access rust through the Evcxr REPL (Read-Eval-Print loop)"
-	@echo "    jupyter    access rust through the Evcxr Jupyter Notebook"
+	@echo "    jupyter         access rust through the Evcxr Jupyter Notebook"
 	@echo "    release         Release VERSION (specified in Cargo.toml) on the dev branch"
 
 #################
