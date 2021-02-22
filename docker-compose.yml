@@ -22,11 +22,10 @@ services:
     volumes:
       - .:/usr/app/
     working_dir: /usr/app/
-
     command: "evcxr"
 
 
-  rust-jupyter:
+  jupyter:
     image: base_image
     user: root
     volumes:

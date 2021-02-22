@@ -25,6 +25,10 @@ RUN rustup override set nightly-2021-01-21
 RUN rustup default nightly-2021-01-21
 RUN echo $(rustup show)
 
+# Install cargo-play
+
+RUN cargo install cargo-play
+
 # Copy project directories
 
 COPY src $APP_DIR/src

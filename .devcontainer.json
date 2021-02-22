@@ -1,0 +1,9 @@
+{
+  "name": "rust-greenhouse",
+  "initializeCommand": "make build && docker-compose run -d bash",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "bash",
+  "workspaceFolder": "/usr/app/",
+  "extensions": ["rust-lang.rust", "matklad.rust-analyzer"],
+  "shutdownAction": "stopCompose"
+}

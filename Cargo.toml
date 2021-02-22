@@ -1,6 +1,6 @@
 [package]
 name = "greenhouse"
-version = "0.1.1"
+version = "0.1.7"
 authors = ["Felipe Penha <felipe.penha@alumni.usp.br>"]
 description = "A Rust containerized framework for a better Data X development workflow."
 repository = "https://github.com/felipepenha/rust-greenhouse"
@@ -12,7 +12,7 @@ include = [
 edition= "2018"
 
 [workspace]
-members = ["src/*"]
+members = ["src/*", "notebooks/*"]
 
 [lib]
 name = "foo"
@@ -25,5 +25,8 @@ name = "script"
 path = "src/main.rs"
 
 [dependencies]
-datafusion = "2.0.0"
-arrow = "2.0.0"
+datafusion = "3.0.0"
+arrow = "3.0.0"
+plotly = { version = "0.6.0", features = ["kaleido"] }
+rand = "0.8.3"
+rand_distr = "0.4.0"
