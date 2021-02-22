@@ -1,6 +1,5 @@
-
 # The present file, 'Makefile' has been modified from the original at
-# https://github.com/felipepenha/data-science-template/blob/master/
+# https://github.com/NeowayLabs/data-science-template
 # under the folllowing license:
 #
 # MIT License
